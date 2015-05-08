@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Airbitz Mobile Platform</title>
+    
+    <meta name="description" content="Airbitz is a platform for mobile and desktop bitcoin developmwent." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <!-- link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" / -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/speech.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/highlight.min.css">
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div id="title" class="step" data-x="-1000" data-y="0" data-scale="4">
+        <h1>Airbitz</h1>
+        <h3>Core SDK</h3>
+        <hr />
+        <span class="footnote">
+            Tim Horton<br />
+            Co-Founder / CTO
+        </span>
+    </div>
+
+    <div id="wtf" class="step" data-x="-1000" data-y="2000" data-scale="4">
+        <div class="triangle-border right">I thought Airbitz was a wallet?</div>
+        <div class="triangle-border left">I thought it was a business directory?</div>
+    </div>
+
+    <div id="whatisit" class="step slide" data-x="-4000" data-y="4000">
+        <h1>Airbitz Core</h1>
+        <div style="float: right; padding: 10px;">
+            <img src="imgs/comparison.png" />
+        </div>
+        <ul>
+            <li>Powerful client side library</li>
+            <li>The foundation for the Airbitz iOS and Android Wallets</li>
+        </ul>
+    </div>
+
+    <div id="platform" class="step slide" data-x="-4000" data-y="4000">
+        <h1>Airbitz Core <div class="subtitle">features</div></h1>
+        <p>
+            <ul>
+                <li>User authentication</li>
+                <li>Client-side Encryption</li>
+                <li>Offline Access</li>
+                <li>Multi-device, Multi-OS synchronization &amp; Backup</li>
+                <li>Meta-data management</li>
+                <li>Bitcoin Address generation / key management</li>
+                <li>Transaction signing / broadcasting</li>
+                <li>Decentralized access to bitcoin network</li>
+            </ul>
+        </p>
+    </div>
+
+    <div id="authentication" class="step slide" data-x="-4000" data-y="4000">
+        <h1>Authentication</h1>
+        <ul>
+            <li>Login via Password or Recovery Questions</li>
+            <li>Access Account on any device</li>
+            <li>Protect account with Two Factor Authentication (RFC 6238)</li>
+        </ul>
+        <div style="text-align: center">
+            <img src="imgs/login-paths.png" />
+        </div>
+    </div>
+
+    <div id="encryption" class="step slide" data-x="-4000" data-y="4000">
+        <h1>Offline Access &amp; Client-Side Encryption</h1>
+        <div class="tiny">sync/Transactions/3AxTGXhgQwu7s4E7e2UPBNS99xuLBJ5ysciqMQaVSyZU-int.json</div>
+        <pre><code class="json"> {
+    "data_base64": "Aq+uITBLeIfThXyvv0Pi8duS8NFtMaRTxZg5J85uyTtRFoc...."
+    "encryptionType": 0,
+    "iv_hex": "86142f5947cf39eadf73c6c556cae43c"
+}</code></pre>
+        <ul>
+            <li>Client's data is encrypted and stored locally</li>
+            <li>Filenames obscured by HMAC-256 (MK, filename)</li>
+            <li>Files are synced to cloud</li>
+        </ul>
+    </div>
+
+    <div id="txmetadata" class="step slide" data-x="-4000" data-y="4000">
+        <h1>Meta Data &amp; Storage</h1>
+        <ul>
+            <li>Address &amp Transactions
+                <ul>
+                    <li>Label, category, memo, business</li>
+                </ul>
+            </li>
+            <li>Store non-bitcoin related data securely</li>
+            <li>Share data with other users</li>
+        </ul>
+    </div>
+
+    <div id="usecases" class="step slide" data-x="-4000" data-y="4000">
+        <h1>Use Cases</h1>
+        <div>
+            <h2>Bitcoin Applications</h2>
+            <ul>
+                <li>POS Solutions</li>
+                <li>ATMs</li>
+                <li>Games</li>
+                <li>Torrent clients</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Other Applications</h2>
+            <ul>
+                <li>Secure Notes</li>
+                <li>Password/Key Manager</li>
+                <li>Private Financial Applications</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="internals" class="step slide" data-x="-1000" data-y="4000">
+        <h1>How all it works</h2>
+        <div style="text-align: center">
+            <img src="imgs/stack.png" />
+        </div>
+    </div>
+
+    <div id="flow" class="step slide" data-x="-1000" data-y="4000">
+        <h1>Data Access</h2>
+        <div style="text-align: center">
+            <img src="imgs/data_access.png" />
+        </div>
+    </div>
+
+    <div id="authserver" class="step slide" data-x="-1000" data-y="4000">
+        <h1>Authentication Server</h1>
+        <div style="float: right">
+            <img src="imgs/django.png" /><br />
+            <img src="imgs/postgresql.png" /><br />
+        </div>
+        <ul>
+            <li>Built with Django, Postgres</li>
+            <li>Allows account access on different devices</li>
+            <li>Throttle PIN attempts</li>
+            <li>Username &amp; password are never sent to server</li>
+            <li>Password &amp; PIN hashed with scrypt</li>
+        </ul>
+    </div>
+
+    <div id="storageserver" class="step slide" data-x="-1000" data-y="4000">
+        <h1>Sync Servers</h1>
+        <div style="float: right">
+            <img src="imgs/apache.png" /><br />
+            <img src="imgs/git.png" /><br />
+        </div>
+        <ul>
+            <li>Backup and synchronize to multiple devices</li>
+            <li>Storage cannot be linked to a user</li>
+            <li>Peer to peer</li>
+            <li>Rollback &amp; merge resolution</li>
+        </ul>
+    </div>
+
+    <div id="api" class="step slide" data-x="-1000" data-y="4000">
+        <h1>ABC API</h1>
+        <ul>
+            <li>C Interface, implemented in C++</li>
+            <li>Native Library build on
+                <ul>
+                    <li>scrypt</li>
+                    <li>libbitcoin / zeromq</li>
+                    <li>libgit2</li>
+                    <li>libqrencode</li>
+                    <li>libsecp256k1</li>
+                    <li>openssl</li>
+                </ul>
+            </li>
+            <li>Cross Platform - Android, iOS and Desktop</li>
+        </ul>
+    </div>
+
+    <div id="abc_initialize" class="step slide" data-x="-1000" data-y="4000">
+        <h1>ABC_Initialize()</h1>
+        <pre><code class="c">tABC_CC ABC_Initialize(const char *szRootDir, const char *szCaCertPath,
+                       const unsigned char *pSeedData, unsigned int seedLength,
+                       tABC_Error *pError);</code></pre>
+        <ol>
+            <li>Initialize crypto with /dev/urandom and additional seed</li>
+            <li>Calculate scrypt parameters based on device</li>
+        </ol>
+    </div>
+
+    <div id="abc_createaccount" class="step slide" data-x="-1000" data-y="4000">
+        <h1>ABC_AccountCreate</h1>
+        <pre><code class="c">tABC_CC ABC_CreateAccount(const char *szUserName, const char *szPassword, tABC_Error *pError);</code></pre>
+        <ol>
+            <li>Login &amp; password are salted and hashed into L1 &amp; LP1.</li>
+            <li>Client generates a Masker Key, RepoAcctKey</li>
+            <li>Login &amp; password are salted and hashed into LP2</li>
+            <li>MK and RepoAcctKey are encrypted bundled into a LoginPackage</li>
+            <li>The client then sends L1, LP1, LoginPackage to the auth server for account creation.</li>
+        </ol>
+    </div>
+
+    <div id="abc_signin" class="step slide" data-x="-1000" data-y="4000">
+        <h1>ABC_SignIn</h1>
+        <pre><code class="c">tABC_CC ABC_SignIn(const char *szUserName, const char *szPassword, tABC_Error *pError); </code></pre>
+        <ul>
+            <li>Login &amp; password are salted and hashed into LP2</li>
+            <li>If the data is local:
+                <ul>
+                    <li>Decrypt MK from the LoginPackage with LP2</li>
+                </ul>
+            <li>Otherwise:
+                <ul>
+                    <li>Create L1 and LP1 by hashing and salting username and password</li>
+                    <li>Send L1 and LP1 to server requesting LoginPackage</li>
+                    <li>Decrypt MK from LoginPackage using LP2</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!--
+    <div id="abc_createwallet" class="step slide" data-x="-1000" data-y="4000">
+        <h1>Create Wallet</h1>
+        <pre><code>tABC_CC ABC_CreateWallet(const char *szUserName, const char *szPassword,
+                         const char *szWalletName, int currencyNum,
+                         char **pszUuid, tABC_Error *pError);</code></pre>
+        <ol>
+            <li>Client generates wallet UUID and a key (RepoWalletKey)</li>
+            <li>RepoWalletKey is encrypted using MK (ERepoWalletKey) and stored</li>
+            <li>Clients sends L1, LP1, RepoWalletKey, and ERepoWalletKey to the auth-server.</li>
+            <li>The server creates a repository and discards the RepoWalletKey</li>
+            <li>The client creates a local repo and syncs its contents using the RepoWalletKey.</li>
+            <li>The private BIP32 seed is encrypted with MK, stored in the account directory and synced.</li>
+        </ol>
+    </div>
+    -->
+
+    <div id="getting_started_mobile" class="step slide" data-x="-1000" data-y="4000">
+        <h1>Getting Started <span class="subtitle">building for mobile</span></h1>
+        <div>
+            <pre><code class="bash"># Install build dependencies
+brew install autoconf automake cmake git libtool pkgconfig wget
+# Get the code
+git clone git@github.com:Airbitz/airbitz-core.git
+
+# Build!
+cd airbitz-core/deps
+make
+# Or to build arm and x86 for android
+make abc.build-android-arm abc.build-android-x86
+# Or to build armv7, armv7s, arm64, i386, and x86_64 for iOS
+make abc.package-ios-universal
+            </code></pre>
+        </div>
+    </div>
+
+    <div id="getting_started_desktop" class="step slide" data-x="-1000" data-y="4000">
+        <h1>Getting Started <span class="subtitle">building for desktop</span></h1>
+        <div>
+            <pre><code class="bash"># Install build dependencies
+# If dependencies are installed
+git clone git@github.com:Airbitz/airbitz-core.git
+cd airbitz-core
+# Build!
+make</code></pre>
+
+            <h2>CLI Utility</h2>
+            <pre><code class="bash">USERNAME=testaccount
+PASSWORD=B3stPassword
+./abc-cli sign-in ~/accounts $USERNAME $PASSWORD
+./abc-cli create-wallet ~/accounts $USERNAME $PASSWORD My-New-Wallet</code></pre>
+        </div>
+    </div>
+
+    <!--
+    <div id="signin_sample" class="step slide" data-x="-1000" data-y="4000">
+        <h1>Signing In <div class="subtitle">Samples</div></h1>
+        <pre><code class="c">// Initialize the API
+tABC_Error error;
+ABC_Initialize("/home/satoshi/accounts", CA_CERTS, seed, sizeof(seed), &error);
+
+if (ABC_SignIn(USER_NAME, PASSWORD, &error) == ABC_CC_Ok) {
+    printf("Success!");
+} else {
+    printf("Failed!");
+    exit(EXIT_FAILURE);
+}
+        </code></pre>
+    </div>
+    -->
+
+    <div id="receive_sample" class="step slide" data-x="-1000" data-y="4000">
+        <h1>Receiving Bitcoin <div class="subtitle">Samples</div></h1>
+        <pre><code class="c">tABC_TxDetails details;
+details.szName = "BFF";
+details.szCategory = "Income:Friend Tax";
+
+char *reqId = NULL;
+ABC_CreateReceiveRequest(USER_NAME, NULL, WALLET_ID, &details, &reqID, &error);
+
+char *address = NULL;
+ABC_GetRequestAddress(USER_NAME, NULL, WALLET_ID, reqId, &szAddress, &error);
+        </code></pre>
+    </div>
+
+    <div id="send_sample" class="step slide" data-x="-1000" data-y="4000">
+        <h1>Sending Bitcoin <div class="subtitle">Samples</div></h1>
+        <pre><code class="c">const char *uri = "bitcoin://1bffw.....Y1F9W?label=BFF&amount=1&category=Expense:Friend Tax";
+tABC_BitcoinURIInfo info;
+ABC_ParseBitcoinURI(uri, &info, &error);
+
+char *txId = NULL;
+tABC_TxDetails details;
+details.szName = info.szName;
+details.szCategory = info.szCategory;
+ABC_InitiateSendRequest(USER_NAME, NULL, WALLET_ID, info.szAddress, &details, &txId, &error);</code></pre>
+    </div>
+
+    <div id="future" class="step slide" data-x="2000" data-y="4000">
+        <h1>Future</h1>
+        <div style="float: right; padding: 10px;">
+            <img src="imgs/js.png" />
+        </div>
+        <ul>
+            <li>Language Bindings: Objective-C, Java, Python</li>
+            <li>Shared Wallets / MultiSig</li>
+            <li>Simple Payment Verification (SPV)</li>
+            <li>Javascript Plugins</li>
+        </ul>
+    </div>
+
+    <div id="resources" class="step slide" data-x="2000" data-y="4000">
+        <h1>Resources</h1>
+        <h2>Github</h2>
+        <p>
+            <a href="https://github.com/Airbitz/airbitz-core">https://github.com/Airbitz/airbitz-core</a>
+        </p>
+        <h2>Security Docs</h2>
+        <p>
+            <a href="https://airbitz.co/bitcoin-wallet-api-library/">https://airbitz.co/bitcoin-wallet-api-library/</a>
+        </p>
+        <h2>Github</h2>
+        <p>
+            <a href="https://airbitz.co/teneighty/">https://github.co/teneighty/</a>
+        </p>
+    </div>
+</div>
+
+<script src="js/highlight.min.js"></script>
+<script src="lib/impress.js/js/impress.js"></script>
+<script>
+    var api = impress();
+    api.init();
+
+    hljs.initHighlightingOnLoad();
+</script>
+
+<div style="position: fixed; bottom: 10px; right: 10px; pointer-events: auto;">
+    <img src="imgs/logo.png" />
+</div>
+
+
+</body>
+</html>
+
+
