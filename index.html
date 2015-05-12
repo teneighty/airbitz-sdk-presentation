@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>Airbitz Mobile Platform</title>
-    
+
     <meta name="description" content="Airbitz is a platform for mobile and desktop bitcoin developmwent." />
     <meta name="author" content="Bartek Szopka" />
 
@@ -47,21 +47,21 @@
             <img src="imgs/comparison.png" />
         </div>
         <ul>
-            <li>Powerful client side library</li>
-            <li>The foundation for the Airbitz iOS and Android Wallets</li>
+            <li>Powerful client-side library</li>
+            <li>The foundation for the Airbitz iOS and Android wallets</li>
         </ul>
     </div>
 
     <div id="platform" class="step slide" data-x="-4000" data-y="4000">
-        <h1>Airbitz Core <div class="subtitle">features</div></h1>
+        <h1>Airbitz Core <div class="subtitle">Features</div></h1>
         <p>
             <ul>
                 <li>User authentication</li>
-                <li>Client-side Encryption</li>
-                <li>Offline Access</li>
-                <li>Multi-device, Multi-OS synchronization &amp; Backup</li>
-                <li>Meta-data management</li>
-                <li>Bitcoin Address generation / key management</li>
+                <li>Client-side encryption</li>
+                <li>Offline access</li>
+                <li>Multi-device, multi-OS synchronization &amp; backup</li>
+                <li>Metadata management</li>
+                <li>Bitcoin address generation / key management</li>
                 <li>Transaction signing / broadcasting</li>
                 <li>Decentralized access to bitcoin network</li>
             </ul>
@@ -71,9 +71,9 @@
     <div id="authentication" class="step slide" data-x="-4000" data-y="4000">
         <h1>Authentication</h1>
         <ul>
-            <li>Login via Password or Recovery Questions</li>
-            <li>Access Account on any device</li>
-            <li>Protect account with Two Factor Authentication (RFC 6238)</li>
+            <li>Login via password or recovery questions</li>
+            <li>Access account on any device</li>
+            <li>Protect account with two factor authentication (RFC 6238)</li>
         </ul>
         <div style="text-align: center">
             <img src="imgs/login-paths.png" />
@@ -96,9 +96,9 @@
     </div>
 
     <div id="txmetadata" class="step slide" data-x="-4000" data-y="4000">
-        <h1>Meta Data &amp; Storage</h1>
+        <h1>Metadata &amp; Storage</h1>
         <ul>
-            <li>Address &amp Transactions
+            <li>Address &amp transactions
                 <ul>
                     <li>Label, category, memo, business</li>
                 </ul>
@@ -111,7 +111,7 @@
     <div id="usecases" class="step slide" data-x="-4000" data-y="4000">
         <h1>Use Cases</h1>
         <div>
-            <h2>Bitcoin Applications</h2>
+            <h2>Bitcoin applications</h2>
             <ul>
                 <li>POS Solutions</li>
                 <li>ATMs</li>
@@ -122,15 +122,15 @@
         <div>
             <h2>Other Applications</h2>
             <ul>
-                <li>Secure Notes</li>
-                <li>Password/Key Manager</li>
-                <li>Private Financial Applications</li>
+                <li>Secure notes</li>
+                <li>Password/key manager</li>
+                <li>Private financial applications</li>
             </ul>
         </div>
     </div>
 
     <div id="internals" class="step slide" data-x="-1000" data-y="4000">
-        <h1>How all it works</h2>
+        <h1>How it All Works</h2>
         <div style="text-align: center">
             <img src="imgs/stack.png" />
         </div>
@@ -176,7 +176,7 @@
         <h1>ABC API</h1>
         <ul>
             <li>C Interface, implemented in C++</li>
-            <li>Native Library build on
+            <li>Native library built on
                 <ul>
                     <li>scrypt</li>
                     <li>libbitcoin / zeromq</li>
@@ -186,7 +186,7 @@
                     <li>openssl</li>
                 </ul>
             </li>
-            <li>Cross Platform - Android, iOS and Desktop</li>
+            <li>Cross platform - Android, iOS and desktop</li>
         </ul>
     </div>
 
@@ -206,10 +206,10 @@
         <pre><code class="c">tABC_CC ABC_CreateAccount(const char *szUserName, const char *szPassword, tABC_Error *pError);</code></pre>
         <ol>
             <li>Login &amp; password are salted and hashed into L1 &amp; LP1.</li>
-            <li>Client generates a Masker Key, RepoAcctKey</li>
+            <li>Client generates a Masker Key &amp; RepoAcctKey</li>
             <li>Login &amp; password are salted and hashed into LP2</li>
             <li>MK and RepoAcctKey are encrypted bundled into a LoginPackage</li>
-            <li>The client then sends L1, LP1, LoginPackage to the auth server for account creation.</li>
+            <li>The client then sends L1, LP1, &amp; LoginPackage to the auth server for account creation.</li>
         </ol>
     </div>
 
@@ -336,10 +336,10 @@ ABC_InitiateSendRequest(USER_NAME, NULL, WALLET_ID, info.szAddress, &details, &t
             <img src="imgs/js.png" />
         </div>
         <ul>
-            <li>Language Bindings: Objective-C, Java, Python</li>
-            <li>Shared Wallets / MultiSig</li>
-            <li>Simple Payment Verification (SPV)</li>
-            <li>Javascript Plugins</li>
+            <li>Language bindings: Objective-C, Java, Python</li>
+            <li>Shared wallets / multisig</li>
+            <li>Simplified payment verification (SPV)</li>
+            <li>Javascript plugins</li>
         </ul>
     </div>
 
@@ -349,7 +349,7 @@ ABC_InitiateSendRequest(USER_NAME, NULL, WALLET_ID, info.szAddress, &details, &t
         <p>
             <a href="https://github.com/Airbitz/airbitz-core">https://github.com/Airbitz/airbitz-core</a>
         </p>
-        <h2>Security Docs</h2>
+        <h2>Security docs</h2>
         <p>
             <a href="https://airbitz.co/bitcoin-wallet-api-library/">https://airbitz.co/bitcoin-wallet-api-library/</a>
         </p>
