@@ -206,7 +206,7 @@
         <pre><code class="c">tABC_CC ABC_CreateAccount(const char *szUserName, const char *szPassword, tABC_Error *pError);</code></pre>
         <ol>
             <li>Login &amp; password are salted and hashed into L1 &amp; LP1.</li>
-            <li>Client generates a Masker Key &amp; RepoAcctKey</li>
+            <li>Client generates a Master Key &amp; RepoAcctKey</li>
             <li>Login &amp; password are salted and hashed into LP2</li>
             <li>MK and RepoAcctKey are encrypted bundled into a LoginPackage</li>
             <li>The client then sends L1, LP1, &amp; LoginPackage to the auth server for account creation.</li>
